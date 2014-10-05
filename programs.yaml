@@ -1,3 +1,9 @@
 example:
 	/blob/master/Vexatos/example.lua
 	Hello world by Vexatos
+interface-api:
+	/blob/master/TankNut/interface.lua
+	Just another GUI api by TankNut
+interface-example:
+	/blob/master/TankNut/interface_demo.lua
+	An example script for the GUI api by TankNut (WIP)
