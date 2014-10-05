@@ -6,4 +6,4 @@ interface-api:
 	Just another GUI api by TankNut
 interface-example:
 	/blob/master/TankNut/interface_demo.lua
-	An example script for the GUI api by TankNut (WIP)
+	An example script for the GUI api by TankNut
