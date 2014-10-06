@@ -123,8 +123,8 @@ end
 
 function API.getButtonClicked(x,y)
     for ID,data in pairs(objects) do
-        local xmax = data["x"]+data["width"]
-        local ymax = data["y"]+data["height"]
+        local xmax = data["x"]+data["width"]-1
+        local ymax = data["y"]+data["height"]-1
         if data["type"] == "button" then
             if x >= data["x"] and x <= xmax then
                 if y >= data["y"] and y <= ymax then
@@ -151,6 +151,7 @@ end
 
 function API.processClick(x,y)
     local ID = API.getButtonClicked(x,y)
+    if not ID then return end
     local objtype = objects[ID]["type"]
     if not objtype == "button" then return end
     if not ID == false then
@@ -168,6 +169,15 @@ function API.setBarValue(ID,value)
     local objtype = objects[ID]["type"]
     if not objtype == "bar" then return end
     objects[ID]["value"] = API.clamp(value,0,100)
+    API.updateAll()
+end
+
+function API.setLabelText(ID,label)
+    local objtype = objects[ID]["type"]
+    if not objtype == "label" or not objtype == "button" then return end
+    if not label then label = " " end
+    objects[ID]["label"] = label
+    API.updateAll()
 end
 
 return API
