@@ -104,7 +104,7 @@ function API.toggleButton(ID)
     local objtype = objects[ID]["type"]
     if not objtype == "button" then return end
     objects[ID]["active"] = not objects[ID]["active"]
-    API.updateAll()
+    API.draw(ID)
 end
 
 function API.flashButton(ID)
@@ -169,7 +169,7 @@ function API.setBarValue(ID,value)
     local objtype = objects[ID]["type"]
     if not objtype == "bar" then return end
     objects[ID]["value"] = API.clamp(value,0,100)
-    API.updateAll()
+    API.draw(ID)
 end
 
 function API.setLabelText(ID,label)
@@ -177,7 +177,7 @@ function API.setLabelText(ID,label)
     if not objtype == "label" or not objtype == "button" then return end
     if not label then label = " " end
     objects[ID]["label"] = label
-    API.updateAll()
+    API.draw(ID)
 end
 
 return API
