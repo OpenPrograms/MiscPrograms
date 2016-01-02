@@ -129,7 +129,7 @@ do
   if err then error("Failed to load service.lua: "..tostring(err)) end
 
   _G.component = nil
-  _G.computer = nil
+  --_G.computer = nil
 
   while true do
 
