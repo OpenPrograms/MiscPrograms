@@ -34,7 +34,11 @@ _G.loadfile = function(_addr, _path)
 
   component.invoke(_addr, "close", fil)
 
-  return load(buf, "=".._path)
+  local chunk, err = load(buf, "=".._path)
+
+  if not chunk then return nil, err end
+
+  return chunk, nil
 
 end
 

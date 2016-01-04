@@ -57,4 +57,12 @@ modules.getSearchPaths = function()
 
 end
 
+modules.addSearchPath("/lib/!.lua")
+modules.addSearchPath("/lib/!/main.lua")
+modules.addSearchPath("/lib/!/!.lua")
+
+modules.addSearchPath("/usr/lib/!.lua")
+modules.addSearchPath("/usr/lib/!/main.lua")
+modules.addSearchPath("/usr/lib/!/!.lua")
+
 return modules
