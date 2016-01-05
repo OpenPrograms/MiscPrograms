@@ -6,8 +6,10 @@
 
   Low level load file implementation.
 
-  @arg _addr : The address of the file system to use.
-  @arg _path : Path to the file to load.
+  @arg _addr (string) : The address of the file system to use.
+  @arg _path (string) : Path to the file to load.
+
+  @return (function / nil, string) The loaded chunk or nil and the error.
 
 ]]
 _G.loadfile = function(_addr, _path)

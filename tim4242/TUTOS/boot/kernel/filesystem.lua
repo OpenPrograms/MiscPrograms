@@ -6,6 +6,8 @@ local mounts = {}
 
 local function getAddrAndPath(_path)
 
+  if _path:sub(1, 1) ~= "/" then _path = "/".._path end
+
   if mounts[_path] ~= nil then return mounts[_path], "/" end
 
   local parts = {}

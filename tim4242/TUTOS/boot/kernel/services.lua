@@ -569,18 +569,29 @@ for k, v in pairs(serviceTypes) do
 
 end
 
-_G.getService = function(_type) --Global function to load services.
+_G.getService = function(_type) --Global function to get services.
 
   return services[_type]
 
 end
 
-_G.services = setmetatable({}, { --Global table for syntactic sugar access.
+--[[
+
+  Global table for syntactic sugar access like this:
+
+    local fs = services.filesystem
+
+  or
+
+    services.computer.shutdown()
+
+]]
+_G.services = setmetatable({}, {
 
   __index = function(_table, _key) --Index meta method
 
-    return _G.getService(_key) --Get service of the given name.
-    
+    return _G.getService(_key) --Get service of the given name
+
   end
 
 })

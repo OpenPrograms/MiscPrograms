@@ -2,7 +2,7 @@ do
 
 
   --I really don't like this function just laying around, therefore I have to destroy it
-  _G.boot_invoke = nil
+  _G.boot_invoke = nil --(Literally the first line I wrote)
 
   --[[OS_DATA SETUP]]
 
@@ -190,7 +190,7 @@ do
   while true do --Keep the screen alive
 
     coroutine.yield()
-    getService("computer").shutdown()
+    services.computer.shutdown()
 
   end
 
