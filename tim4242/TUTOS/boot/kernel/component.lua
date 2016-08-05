@@ -7,11 +7,11 @@ local mains = {}
 
 component.getMain = function(_type)
 
-  if not component.hasType() then return nil end
+  if not component.hasType(_type) then return nil end
 
   if not mains[_type] or not comps[_type][mains[_type]] then
 
-    mains[_type] = pairs(comps[_type])()
+    component.setMain(next(comps[_type]))
 
   end
 
@@ -21,11 +21,11 @@ end
 
 component.setMain = function(_addr)
 
-  local type = component.getType(_adr)
+  local type = component.getType(_addr)
 
   if type and comps[type] and comps[type][_addr] then
 
-    mains[_type] = _addr
+    mains[type] = _addr
 
   end
 
@@ -39,15 +39,11 @@ end
 
 component.hasType = function(_type)
 
-  return type(comps[_types]) == "table"
+  return type(comps[_type]) == "table"
 
 end
 
-component.getType = function(_addr)
-
-  return native.type(_addr)
-
-end
+component.getType = native.type
 
 component.getData = function(_addr)
 
@@ -65,7 +61,7 @@ component.getData = function(_addr)
 
   for k, v in pairs(res.methods) do
 
-    docs[k] = res.doc(_addr, k)
+    res.docs[k] = native.doc(_addr, k)
 
   end
 
@@ -76,6 +72,30 @@ end
 component.exists = function(_addr)
 
   return component.getType(_addr) ~= nil
+
+end
+
+component.getProxy = native.proxy
+
+component.callFunc = native.invoke
+
+setmetatable(component, {
+
+  __index = function(_table, _key)
+
+    return _table.getMain(_key)
+
+  end
+
+})
+
+for comp in native.list() do
+
+  local t = component.getType(comp)
+
+  if comps[t] == nil then comps[t] = {} end
+
+  comps[t][comp] = component.getProxy(comp)
 
 end
 
