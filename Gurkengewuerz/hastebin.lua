@@ -29,7 +29,7 @@ local function get(hastebinId, filename)
   end
 
   io.write("Downloading from hastebin.com... ")
-  local url = "hastebin.com/raw" .. hastebinId
+  local url = "http://hastebin.com/raw/" .. hastebinId
   local result, response = pcall(internet.request, url)
   if result then
     io.write("success.\n")
