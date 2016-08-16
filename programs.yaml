@@ -7,3 +7,6 @@ interface-api:
 interface-example:
 	/blob/master/TankNut/interface_demo.lua
 	An example script for the GUI api by TankNut
+hastebin:
+	/blob/master/Gurkengewuerz/hastebin.lua
+	Pastebin clone for hastebin.com by Gurkengewuerz
