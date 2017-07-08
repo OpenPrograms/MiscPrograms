@@ -29,7 +29,7 @@ local function get(hastebinId, filename)
   end
 
   io.write("Downloading from hastebin.com... ")
-  local url = "http://hastebin.com/raw/" .. hastebinId
+  local url = "https://hastebin.com/raw/" .. hastebinId
   local result, response = pcall(internet.request, url)
   if result then
     io.write("success.\n")
@@ -101,7 +101,7 @@ function put(path)
 
   io.write("Uploading to hastebin.com... ")
   local result, response = pcall(internet.request,
-        "http://hastebin.com/documents", 
+        "https://hastebin.com/documents", 
         data)
 
   if result then
