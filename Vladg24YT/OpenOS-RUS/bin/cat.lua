@@ -12,7 +12,7 @@ local input_method, input_param = "read", require("tty").window.width
 for i = 1, #args do
   local arg = shell.resolve(args[i])
   if fs.isDirectory(arg) then
-    io.stderr:write(string.format('cat %s: Is a directory\n', arg))
+    io.stderr:write(string.format('cat %s: Это директория\n', arg))
     ec = 1
   else
     local file, reason

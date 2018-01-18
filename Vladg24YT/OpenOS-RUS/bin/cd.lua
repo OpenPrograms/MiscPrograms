@@ -7,15 +7,15 @@ local verbose = false
 
 if ops.help then
   print(
-[[Usage cd [dir]
-For more options, run: man cd]])
+[[Использование cd [директроия]
+Для большей информации, напишите: man cd]])
   return
 end
 
 if #args == 0 then
   local home = os.getenv("HOME")
   if not home then
-    io.stderr:write("cd: HOME not set\n")
+    io.stderr:write("cd: HOME не установлен\n")
     return 1
   end
   path = home
@@ -23,7 +23,7 @@ elseif args[1] == '-' then
   verbose = true
   local oldpwd = os.getenv("OLDPWD");
   if not oldpwd then
-    io.stderr:write("cd: OLDPWD not set\n")
+    io.stderr:write("cd: OLDPWD не установлен\n")
     return 1
   end
   path = oldpwd
@@ -33,7 +33,7 @@ end
 
 local resolved = shell.resolve(path)
 if not fs.exists(resolved) then
-  io.stderr:write("cd: ",path,": No such file or directory\n")
+  io.stderr:write("cd: ",path,": нет такого файла или директории\n")
   return 1
 end
 

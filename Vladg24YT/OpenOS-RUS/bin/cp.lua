@@ -4,22 +4,22 @@ local transfer = require("tools/transfer")
 local args, options = shell.parse(...)
 options.h = options.h or options.help
 if #args < 2 or options.h then
-  io.write([[Usage: cp [OPTIONS] <from...> <to>
- -i: prompt before overwrite (overrides -n option).
- -n: do not overwrite an existing file.
- -r: copy directories recursively.
- -u: copy only when the SOURCE file differs from the destination
-     file or when the destination file is missing.
- -P: preserve attributes, e.g. symbolic links.
- -v: verbose output.
- -x: stay on original source file system.
- --skip=P: skip files matching lua regex P
+  io.write([[Использование: cp [ОПЦИИ] <из...> <в>
+ -i: prompt перед перезаписыванием (пр=ереопределяет -n опцию).
+ -n: не переписывать существующий файл.
+ -r: скопировать директории recursively.
+ -u: скопировать только когда ИСХОДНЫЙ файл отличается от конечного файла
+     или когда конечный файл отсутствует.
+ -P: preserve аттрибуты, т.е. символические ссылки.
+ -v: verbose вывод.
+ -x: остаться на оригинальной исходной файловой системе.
+ --skip=P: пропустить файлы совпадающие с lua regex P
 ]])
   return not not options.h
 end
 
 -- clean options for copy (as opposed to move)
-options = 
+options =
 {
   cmd = "cp",
   i = options.i,

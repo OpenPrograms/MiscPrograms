@@ -7,20 +7,20 @@ if #args == 0 then
 end
 
 local TRY=[[
-Try 'du --help' for more information.]]
+Попробуйте 'du --help' для большей информации.]]
 
 local VERSION=[[
 du (OpenOS bin) 1.0
 Written by payonel, patterned after GNU coreutils du]]
 
 local HELP=[[
-Usage: du [OPTION]... [FILE]...
+Использование: du [ОПЦИЯ]... [ФАЙЛ]...
 Summarize disk usage of each FILE, recursively for directories.
 
-  -h, --human-readable  print sizes in human readable format (e.g., 1K 234M 2G)
-  -s, --summarize       display only a total for each argument
-      --help     display this help and exit
-      --version  output version information and exit]]
+  -h, --human-readable  напечатать размеры в понятном для человека формате (т.е., 1K 234M 2G)
+  -s, --summarize       отобразить только a total для каждого аргумента
+      --help     показать эту помощь и выйти
+      --version  вывести информацию о версии и выйти]]
 
 if options.help then
   print(HELP)
@@ -52,7 +52,7 @@ local bSummary = opCheck('s', 'summarize')
 
 if next(options) then
   for op,v in pairs(options) do
-    io.stderr:write(string.format("du: invalid option -- '%s'\n", op))
+    io.stderr:write(string.format("du: неправильная опция -- '%s'\n", op))
   end
   io.stderr:write(TRY..'\n')
   return 1
@@ -69,7 +69,7 @@ local function formatSize(size)
     unit = unit + 1
     size = size / power
   end
-    
+
   return math.floor(size * 10) / 10 .. sizes[unit]
 end
 
@@ -90,7 +90,7 @@ local function visitor(rpath)
       subtotal = subtotal + vtotal
       dirs = dirs + vdirs
     end
-        
+
     if dirs == 0 then -- no child dirs
       if not bSummary then
         printSize(subtotal, rpath)
@@ -108,12 +108,12 @@ for i,arg in ipairs(args) do
   local path = shell.resolve(arg)
 
   if not fs.exists(path) then
-    io.stderr:write(string.format("du: cannot access '%s': no such file or directory\n", arg))
+    io.stderr:write(string.format("du: невозможно получить доступ к '%s': нет такого файла или директории\n", arg))
     return 1
   else
     if fs.isDirectory(path) then
       local total = visitor(arg)
-                
+
       if bSummary then
         printSize(total, arg)
       end

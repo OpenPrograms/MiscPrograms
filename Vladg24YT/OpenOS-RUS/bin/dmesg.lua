@@ -8,7 +8,7 @@ local color, isPal, evt
 if interactive then
   color, isPal = gpu.getForeground()
 end
-io.write("Press 'Ctrl-C' to exit\n")
+io.write("Нажмите 'Ctrl-C' чтобы выйти\n")
 pcall(function()
   repeat
     if #args > 0 then
@@ -28,11 +28,10 @@ pcall(function()
         io.write("  " .. tostring(evt[i]))
       end
     end
-    
+
     io.write("\n")
   until evt[1] == "interrupted"
 end)
 if interactive then
   gpu.setForeground(color, isPal)
 end
-

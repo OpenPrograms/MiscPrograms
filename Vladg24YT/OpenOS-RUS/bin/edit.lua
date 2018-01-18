@@ -11,7 +11,7 @@ end
 local gpu = term.gpu()
 local args, options = shell.parse(...)
 if #args == 0 then
-  io.write("Usage: edit <filename>")
+  io.write("Использование: edit <имя файла>")
   return
 end
 
@@ -19,17 +19,17 @@ local filename = shell.resolve(args[1])
 local file_parentpath = fs.path(filename)
 
 if fs.exists(file_parentpath) and not fs.isDirectory(file_parentpath) then
-  io.stderr:write(string.format("Not a directory: %s\n", file_parentpath))
+  io.stderr:write(string.format("Не директория: %s\n", file_parentpath))
   return 1
 end
 
 local readonly = options.r or fs.get(filename) == nil or fs.get(filename).isReadOnly()
 
 if fs.isDirectory(filename) then
-  io.stderr:write("file is a directory\n")
+  io.stderr:write("файл - директория\n")
   return 1
 elseif not fs.exists(filename) and readonly then
-  io.stderr:write("file system is read only\n")
+  io.stderr:write("файловая система только для чтения\n")
   return 1
 end
 

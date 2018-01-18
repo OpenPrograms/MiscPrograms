@@ -4,7 +4,7 @@ local args, options = shell.parse(...)
 local ec, error_prefix = 0, "alias:"
 
 if options.help then
-  print(string.format("Usage: alias: [name[=value] ... ]"))
+  print(string.format("Использование: alias: [имя[=значение] ... ]"))
   return
 end
 
@@ -14,7 +14,7 @@ end
 
 local function setAlias(k, v)
   if not validAliasName(k) then
-    io.stderr:write(string.format("%s `%s': invalid alias name\n", error_prefix, k))
+    io.stderr:write(string.format("%s `%s': недопустимое имя алиаса\n", error_prefix, k))
   else
     shell.setAlias(k, v)
   end
@@ -23,10 +23,10 @@ end
 local function printAlias(k)
   local v = shell.getAlias(k)
   if not v then
-    io.stderr:write(string.format("%s %s: not found\n", error_prefix, k))
+    io.stderr:write(string.format("%s %s: не найден\n", error_prefix, k))
     ec = 1
   else
-    io.write(string.format("alias %s='%s'\n", k, v))
+    io.write(string.format("алиас %s='%s'\n", k, v))
   end
 end
 
@@ -50,7 +50,7 @@ end
 if not next(args) then -- no args
   -- print all aliases
   for k,v in shell.aliases() do
-    print(string.format("alias %s='%s'", k, v))
+    print(string.format("алиас %s='%s'", k, v))
   end
 else
   for _,v in ipairs(args) do

@@ -31,7 +31,7 @@ else
   for i = 1, #args do
     local proxy, path = fs.get(shell.resolve(args[i]))
     if not proxy then
-      io.stderr:write(args[i], ": no such file or directory\n")
+      io.stderr:write(args[i], ": нет такого файла или директории\n")
     else
       mounts[proxy] = path
     end
