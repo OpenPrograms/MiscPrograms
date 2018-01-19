@@ -1,28 +1,28 @@
-Экраны уровня 2 и 3 могут действовать как сенсорные - можно не присоединять клавиатуру или sneak-activate их.
-Вы можете изменить шрифт текста на экранах, изменив их расширение - напишите `resolution 40 16` в терминале.
-Firing arrows on touch capable screens can trigger touch events.
-Цвета вещей указывают на их уровень - белый - первый уровень, жёлтый - второй уровень и cyan - третий уровень.
-Используйте Analyzer to get more information on blocks - for example, to find out why a computer crashed.
-Keyboards have to be attached to or placed next to a screen to work.
-Вы можете установить OpenOS on a writable medium by running the `install` program.
-Internet Cards can be used to make HTTP requests and open raw TCP connections.
-If you crafted something by mistake or don't need it any longer, throw it into a disassembler.
-Have a look at the code of the built-in programs for examples on how to use the APIs.
-Most programs can be interrupted by pressing Ctrl+Alt+C.
-Paste the contents of the clipboard using the middle mouse button or a configurable key (default: insert).
-Computers will consume less power while idling - i.e. when os.sleep(n > 0.05) is called.
-Screens will consume more power the more lit characters they display.
-Most blocks act as 'cables' - use relays and power distributors to create separate networks.
-Welcome to the dark side - here, have some cookies.
-Screens can display Unicode - paste the special chars or use unicode.char.
+Мониторы уровня 2 и 3 могут действовать как сенсорные - не присоединяйте клавиатуру или нажмите Shift+ПКМ чтобы включить их.
+Вы можете изменить шрифт текста на мониторах, изменив их расширение - напишите `resolution 40 16` в терминале.
+Клавиши со стрелками на сенсорных экранах могут вызвать события касания (touch event).
+Цвета вещей указывают на их уровень - белый - первый уровень, жёлтый - второй уровень и циан (голубой/бирюзовый) - третий уровень.
+Используйте Анализатор чтобы получить больше информации по блокам - например, чтобы выяснить почему вылетел компьютер.
+Клавиатуры надо подсоединить или поставить рядом с монитором, чтобы она заработала.
+Вы можете установить OpenOS на перезаписываемый жёсткий диск запустив программу `install`.
+Интернет-Карты могут быть использованы для выполнения HTTP запросов и открытых TCP соединений.
+Если вы скрафтили что-то по ошибке или оно вам больше не нужно, выкинте это в разборщик.
+Взгляните на код встроенных программ для примера как использовать API.
+Большинство программ может быть прервано нажатием Ctrl+Alt+C.
+Вставте содержание буфера используя Среднюю Кнопку Мыши (СКМ) или настраиваемую горячую клавишу (по умолчанию: insert).
+Компьютеры потребляют меньше энергии пока спят - т.е. когда вызван метод os.sleep(n > 0.05).
+Чем больше символов отображается на мониторе, тем больше монитор потребляет энергии.
+Большинство блоков работают как кабели - используйте ретрансляторы и распределители энергии, чтобы создать отдельные сети.
+Добро пожаловать на тёмную сторону - вот, поешь печенек.
+Мониторы могут показывать Unicode - вставте нужные символы или используйте unicode.char.
 Запустите `help` или `man имя_программы` для внутриигровой помоци по программам поставляемым с OpenOS - начните с `man man`.
 Для большей информации, на http://ocdoc.cil.li/ есть АНГЛОЯЗЫЧНОЕ вики, РУССКОЯЗЫЧНОЕ - тут: https://minecraft-ru.gamepedia.com/OpenComputers - или найдите the IRC loot disk и присоединитесь(?) к #oc.
-Computers have a very basic, built-in speaker - control it using computer.beep().
-Many component methods have a short documentation - use `=component.componentName.methodName` in the Lua interpreter to see it.
+У компьютеров есть очень простой (базовый), встроенный динамик - контролируйте его используя computer.beep().
+У большинства компонентов есть короткая документация -используйте `=component.componentName.methodName` в Lua терминале чтобы увидеть её.
 Вы можете получить список всех подключённых компонентов используя программу `components`.
-If you encounter out of memory errors, установите больше RAM в свой компьютер.
-Вы пробовали выключить и включить это снова?
-Чтобы отключить это приветствие, установите OpenOS на writeable medium и удалите строку `/etc/motd` из `/etc/profile.lua`.
-Вы знали что у OpenComputers есть форум? Нет? Он находится здесь: https://oc.cil.li/.
-Пожалуйста пишите о багах на Github issue tracker, спасибо!
-Beware of cycles when building networks, or you may get duplicate messages!
+Если вы сталкиваетесь с ошибками памяти (memory errors), установите больше RAM в свой компьютер.
+Вы пробовали выключить и включить это (компьютер) снова?
+Чтобы отключить это приветствие, установите OpenOS на перезаписываемый жёсткий диск и удалите строку `/etc/motd` из `/etc/profile.lua`.
+Вы знали что у OpenComputers есть форум? Нет? Он находится здесь: https://oc.cil.li/ (АНГЛОЯЗЫЧНЫЙ, русский скоро будет).
+Пожалуйста пишите о багах на Github во вкладку issuses, спасибо!
+Берегитесь кругов когда строите сети, или вы можете получить дублирующиеся сообщения!
