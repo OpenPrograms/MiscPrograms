@@ -8,7 +8,7 @@ local count = tonumber(options.limit) or math.huge
 local components = {}
 local padTo = 1
 
-if #args == 0 then -- get all components if no filters given.
+if #args == 0 then -- получить все компоненты если не установлены фильтры.
   args[1] = ""
 end
 for _, filter in ipairs(args) do
