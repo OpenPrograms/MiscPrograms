@@ -10,3 +10,7 @@ interface-example:
 hastebin:
 	/blob/master/Gurkengewuerz/hastebin.lua
 	Pastebin clone for hastebin.com by Gurkengewuerz
+remote-light-controller:
+    /blob/master/mc-oc/OpenComputers/remote-light-controller/light-service.lua
+remote-door-controller:
+  /blob/master/mc-oc/OpenComputers/remote-door-controller/rd-service.lua

@@ -1,0 +1,16 @@
+NAME
+  light-cli - Remote light network service client
+
+SYNOPSIS
+  light-cli <port> <cmd> <strength>
+
+DESCRIPTION
+  This program will allow you to send control commands to the light-service server
+
+  This program requires a Wireless Card
+
+OPTIONS
+
+  <port>        Port number to query
+  <cmd>         Your customized on/off commands. Default: on/off
+  <strength>    Redstone signal strength

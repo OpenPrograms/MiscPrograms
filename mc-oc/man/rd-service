@@ -1,0 +1,14 @@
+NAME
+  rd-service - Host a service for remote redstone door control via tablet
+
+SYNOPSIS
+  rd-service
+
+DESCRIPTION
+  This program will start a service that will listen for network modem_messages and provide remote door control
+
+  This program requires a Redstone Card and Wireless Card
+
+OPTIONS
+
+  You should create a copy of this file to be used on your hosting machine. Edit the configuration inside.
