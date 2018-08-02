@@ -1,0 +1,14 @@
+NAME
+  light-standalone - Control redstone lights with a simple program
+
+SYNOPSIS
+  light-standalone <on/off>
+
+DESCRIPTION
+  This program will control redstone powered lights with simple syntax
+
+  This program requires a Redstone Card
+
+OPTIONS
+
+  <on/off>  Lights on, Lights off
