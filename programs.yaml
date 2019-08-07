@@ -10,3 +10,6 @@ interface-example:
 hastebin:
 	/blob/master/Gurkengewuerz/hastebin.lua
 	Pastebin clone for hastebin.com by Gurkengewuerz
+hello-world:
+	/blob/master/MorozDan2003/hello-world/hello-world.lua
+	Yet Another Hello World Program
