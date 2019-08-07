@@ -1,15 +1,3 @@
-example:
-	/blob/master/Vexatos/example.lua
-	Hello world by Vexatos
-interface-api:
-	/blob/master/TankNut/interface.lua
-	Just another GUI api by TankNut
-interface-example:
-	/blob/master/TankNut/interface_demo.lua
-	An example script for the GUI api by TankNut
-hastebin:
-	/blob/master/Gurkengewuerz/hastebin.lua
-	Pastebin clone for hastebin.com by Gurkengewuerz
 hello-world:
 	/blob/master/MorozDan2003/hello-world/hello-world.lua
 	Yet Another Hello World Program
