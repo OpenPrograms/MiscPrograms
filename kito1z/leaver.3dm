@@ -1,0 +1,18 @@
+	{
+	label = "Industrial leaver",
+	emitRedstone = true,
+	shapes={
+		{0,0,15,16,16,16, texture="iron_block"},
+		{4,13,14,3,1,15,texture="gold_block"},
+		{12,13,15,13,1,14,texture="gold_block"},
+		{3,14,15,  13,13,14,texture="gold_block"},
+		{3,14,15,  13,13,14,texture="gold_block"},
+		{7,16,15,  9,14,14,texture="stone"},
+		
+		{0,0,15,16,16,16, texture="iron_block", state=true},
+		{3,1,3,  4,2,15,texture="gold_block",state=true},
+		{12,1,3,  13,2,15,texture="gold_block",state=true},
+		{3,1,2,  13,2,3,texture="gold_block",state=true},
+		{7,1,0,  9,2,2,texture="stone",state=true}
+	}
+}
